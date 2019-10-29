@@ -1,18 +1,51 @@
 package com.example.myapplication
 
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.myapplication.Utils.local
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var locale: Locale
+    private lateinit var configuration: Configuration
 
+
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        configuration = Resources.getSystem().configuration
+
+        val id: String = local.getLocale(this)
+
+        if(id=="en"){
+            btnEN.setBackgroundColor(getColor(android.R.color.white))
+        }else{
+            btnIN.setBackgroundColor(getColor(android.R.color.white))
+        }
+
+        btnEN.setOnClickListener {
+            locale = Locale("en")
+            configuration.locale = locale
+            resources.updateConfiguration(configuration, resources.displayMetrics)
+            recreate()
+        }
+
+        btnIN.setOnClickListener {
+            locale = Locale("in")
+            configuration.locale = locale
+            resources.updateConfiguration(configuration, resources.displayMetrics)
+            recreate()
+        }
+
 
         btn_login.setOnClickListener {
             if(tvUsername.text.toString().isEmpty()){

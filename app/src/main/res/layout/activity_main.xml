@@ -8,6 +8,27 @@
     android:background="@android:color/darker_gray">
 
     <LinearLayout
+        android:id="@+id/llLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IN"/>
+
+        <Button
+            android:id="@+id/btnEN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EN"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -21,7 +42,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -30,7 +51,7 @@
             android:id="@+id/tvUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="@string/username"
             android:layout_marginTop="10dp"
             android:textSize="16dp"/>
 
@@ -38,7 +59,7 @@
             android:id="@+id/tvPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/passwors"
             android:layout_marginTop="10dp"
             android:textSize="16dp"/>
 
@@ -46,7 +67,7 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:layout_marginTop="16dp"
             android:textStyle="bold"
             android:textSize="16dp"/>
